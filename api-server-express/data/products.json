@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "title": "Michelin Energy XM2+ 195/65 R15",
+    "description": "Neumático de turismo, mayor durabilidad y menor distancia de frenado en superficies húmedas.",
+    "code": "NEU-002",
+    "price": 118000,
+    "status": true,
+    "stock": 15,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/michelin-energy-xm2-195-65-r15.jpg"],
+    "id": "4a0c306a-440f-4726-8b9e-49343bb6dceb"
+  },
+  {
+    "title": "Bridgestone Potenza RE050A 205/55 R16",
+    "description": "Neumático de alto rendimiento, ideal para autos deportivos y conducción exigente.",
+    "code": "NEU-003",
+    "price": 165000,
+    "status": true,
+    "stock": 10,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/bridgestone-potenza-re050a-205-55-r16.jpg"],
+    "id": "5102b913-7bbc-4314-b63b-09293331c462"
+  },
+  {
+    "title": "Firestone F-600 175/70 R13",
+    "description": "Neumático económico y confiable, diseñado para autos pequeños y medianos.",
+    "code": "NEU-004",
+    "price": 78000,
+    "status": true,
+    "stock": 40,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/firestone-f600-175-70-r13.jpg"],
+    "id": "b3b99081-36c2-48df-8284-1aa0c7af8bb3"
+  },
+  {
+    "title": "Goodyear Eagle Sport 195/55 R15",
+    "description": "Neumático deportivo para uso urbano y en ruta, gran agarre en curvas.",
+    "code": "NEU-005",
+    "price": 105000,
+    "status": true,
+    "stock": 20,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/goodyear-eagle-sport-195-55-r15.jpg"],
+    "id": "9434afe3-5521-4d7d-a845-b779a76d6360"
+  },
+  {
+    "title": "Dunlop Direzza DZ102 205/45 R17",
+    "description": "Neumático de performance, balance ideal entre confort y agarre deportivo.",
+    "code": "NEU-006",
+    "price": 178000,
+    "status": true,
+    "stock": 12,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/dunlop-direzza-dz102-205-45-r17.jpg"],
+    "id": "614175d5-1020-45ea-aa8d-f638fad5ea02"
+  },
+  {
+    "title": "Yokohama BluEarth AE50 215/60 R16",
+    "description": "Neumático premium con enfoque ecológico, menor resistencia al rodamiento.",
+    "code": "NEU-007",
+    "price": 152000,
+    "status": true,
+    "stock": 18,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/yokohama-bluearth-ae50-215-60-r16.jpg"],
+    "id": "fd08e3a2-5fa8-498e-a766-f702c7ebf7cb"
+  },
+  {
+    "title": "Kumho Solus KH25 185/60 R14",
+    "description": "Neumático versátil y económico, excelente relación precio-calidad.",
+    "code": "NEU-008",
+    "price": 86000,
+    "status": true,
+    "stock": 35,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/kumho-solus-kh25-185-60-r14.jpg"],
+    "id": "d26f66fc-1cb7-4cca-9904-edd8e208f884"
+  },
+  {
+    "title": "Continental ContiPowerContact 205/55 R16",
+    "description": "Neumático de turismo con diseño optimizado para ahorro de combustible y confort.",
+    "code": "NEU-009",
+    "price": 160000,
+    "status": true,
+    "stock": 22,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/continental-contipowercontact-205-55-r16.jpg"],
+    "id": "638139c8-c4f0-433e-8819-1b4769ba42f6"
+  },
+  {
+    "title": "Fate AR-300 175/70 R14",
+    "description": "Neumático fabricado en Argentina, gran durabilidad y excelente precio.",
+    "code": "NEU-010",
+    "price": 72000,
+    "status": true,
+    "stock": 50,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/fate-ar300-175-70-r14.jpg"],
+    "id": "538a9dec-fbad-4a2e-92f9-ac5c4c676182"
+  },
+  {
+    "title": "Pirelli Cinturato P1 185/65 R15",
+    "description": "Neumático para autos compactos, excelente adherencia en mojado y bajo consumo de combustible.",
+    "code": "NEU-001",
+    "price": 95000,
+    "status": true,
+    "stock": 25,
+    "category": "Neumáticos",
+    "thumbnails": ["https://example.com/images/pirelli-cinturato-p1-185-65-r15.jpg"],
+    "id": "f3b94f88-6d05-4198-abfe-b821f0be4681"
+  }
+]

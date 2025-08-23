@@ -39,10 +39,10 @@ class ProductsDao {
 
   async create(product) {
     const products = await this.#readFile();
-    const newBook = { ...product, id: this.#generateId() };
-    products.push(newBook);
+    const newProduct = { ...product, id: this.#generateId() };
+    products.push(newProduct);
     await this.#saveFile(products);
-    return newBook;
+    return newProduct;
   }
 
   async update(id, updatedFields) {
@@ -51,15 +51,15 @@ class ProductsDao {
 
     if (index === -1) throw new Error("Producto no encontrado");
 
-    const updatedBook = {
+    const updatedProduct = {
       ...products[index],
       ...updatedFields,
       id, // Asegura que el ID no se modifique
     };
 
-    products[index] = updatedBook;
+    products[index] = updatedProduct;
     await this.#saveFile(products);
-    return updatedBook;
+    return updatedProduct;
   }
 
   async delete(id) {
