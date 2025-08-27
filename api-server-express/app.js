@@ -2,8 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 
-const productsRoutes = require("./src/routes/products.routes");
-const cartsRoutes = require("./src/routes/carts.routes");
+const routes = require("./src/routes/index");
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
@@ -19,8 +18,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use("/api/products", productsRoutes);
-app.use("/api/carts", cartsRoutes);
+app.use("/api", routes);
 
 // Default route
 app.get("/", (req, res) => {
