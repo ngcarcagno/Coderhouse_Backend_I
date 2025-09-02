@@ -1,23 +1,66 @@
 const express = require("express");
 const app = express();
-const PORT = 8080;
+const { paths,PORT } = require("./config/config");
 
-const routes = require("./src/routes/index");
+const handlebars = require("express-handlebars");
+const multer = require("multer");
 
-// Middleware to parse JSON and URL-encoded data
-app.use(express.json());
-// Middleware to parse URL-encoded data
-app.use(express.urlencoded({ extended: true }));
-// Middleware for CORS
+//!-------------------------------------
+//! ---------- HANDLEBARS --------------
+//!-------------------------------------
+app.engine(
+    "hbs",
+    handlebars.engine({
+        extname: ".hbs",
+        defaultLayout: "main",
+    })
+);
+app.set("view engine", "hbs");
+app.set("views", paths.views);
+
+//!-------------------------------------
+//! ----------- MULTER -----------------
+//!-------------------------------------
+
+// const upload = multer({ dest: "uploads/" }); // config simple por defecto
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/");
+    },
+    // * ACA usamos este filename para renombrar el path 82376786981243 -> img-44-simple.jpg
+    filename: (req, file, cb) => {
+        const originalName = `img-${req.params.id}-${file.originalname}`;
+        //* Lo guardamos en el objeto req.query para usarlo en el controlador
+        req.query.filename = originalName;
+        cb(null, originalName);
+    },
+});
+const upload = multer({ storage: storage });
+
+//!-------------------------------------
+//! --------- MIDDLEWARES --------------
+//!-------------------------------------
+// SIEMPRE VAN ARRIBA DE LAS RUTAS, SE APLICA A TODO LO QUE ESTA DEBAJO
+// SI NO QUIERO QUE SE APLIQUE A TODAS LAS RUTAS NO USO .USE Y SOLO LO SUMO EN LA RUTA ESPECIFICA
+
+app.use(express.json()); // Middleware to parse JSON
+app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded data
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-});
+}); // Middleware for CORS
+
+//* Static
+//* Todos nuestros archivos ESTATICOS (html, css, img, etc)
+// que se encuentran en la carpeta 'public' sen van a servir en /static
+app.use("/static", express.static(paths.public));
+app.use("/uploads", express.static(paths.upload));
 
 // Routes
+const routes = require("./src/routes/index");
 app.use("/api", routes);
 
 // Default route
