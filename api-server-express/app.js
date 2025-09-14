@@ -1,9 +1,22 @@
 const express = require("express");
+const { createServer } = require("http");
+const { Server } = require("socket.io");
 const app = express();
-const { paths,PORT } = require("./config/config");
+const server = createServer(app);
+const io = new Server(server);
+
+const { paths, PORT } = require("./config/config");
+const config = require("./config/config");
 
 const handlebars = require("express-handlebars");
 const multer = require("multer");
+
+// Importar e instanciar servicios para websockets
+const ProductsDao = require("./src/dao/products.dao");
+const ProductsService = require("./src/services/products.service");
+
+const productsDao = new ProductsDao(config.getFilePath("products.json"));
+const productsService = new ProductsService(productsDao);
 
 //!-------------------------------------
 //! ---------- HANDLEBARS --------------
@@ -59,16 +72,33 @@ app.use((req, res, next) => {
 app.use("/static", express.static(paths.public));
 app.use("/uploads", express.static(paths.upload));
 
+// Hacer io disponible globalmente para los controladores
+app.set('io', io);
+
 // Routes
 const routes = require("./src/routes/index");
 app.use("/api", routes);
 
-// Default route - usando Handlebars
+// Ruta para la vista estática de productos
 app.get("/", (req, res) => {
   try {
     res.render("pages/home", { title: "API Products" });
   } catch (error) {
     console.error("Error en la ruta raíz:", error);
+    res.status(500).send("Error en el servidor");
+  }
+});
+
+// Ruta para la vista de productos en tiempo real
+app.get("/realtimeproducts", async (req, res) => {
+  try {
+    const products = await productsService.getAllProducts();
+    res.render("pages/realtimeproducts", {
+      title: "Products Real Time",
+      products: products
+    });
+  } catch (error) {
+    console.error("Error en ruta realtimeproducts:", error);
     res.status(500).send("Error en el servidor");
   }
 });
@@ -88,6 +118,49 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+// Configuración de Socket.io
+io.on('connection', (socket) => {
+  console.log('🔌 Usuario conectado:', socket.id);
+
+  // Enviar lista de productos al conectarse
+  socket.on('requestProducts', async () => {
+    try {
+      const products = await productsService.getAllProducts();
+      socket.emit('updateProducts', products);
+    } catch (error) {
+      socket.emit('error', 'Error al obtener productos');
+    }
+  });
+
+  // Agregar producto
+  socket.on('addProduct', async (productData) => {
+    try {
+      const newProduct = await productsService.createProduct(productData);
+      const allProducts = await productsService.getAllProducts();
+      io.emit('updateProducts', allProducts);
+      socket.emit('productAdded', { success: true, product: newProduct });
+    } catch (error) {
+      socket.emit('productAdded', { success: false, error: error.message });
+    }
+  });
+
+  // Eliminar producto
+  socket.on('deleteProduct', async (productId) => {
+    try {
+      await productsService.deleteProduct(productId);
+      const allProducts = await productsService.getAllProducts();
+      io.emit('updateProducts', allProducts);
+      socket.emit('productDeleted', { success: true, id: productId });
+    } catch (error) {
+      socket.emit('productDeleted', { success: false, error: error.message });
+    }
+  });
+
+  socket.on('disconnect', () => {
+    console.log('❌ Usuario desconectado:', socket.id);
+  });
+});
+
+server.listen(PORT, () => {
+  console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
 });
