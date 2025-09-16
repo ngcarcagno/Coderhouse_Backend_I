@@ -39,18 +39,21 @@ El curso de Backend I se enfoca en el desarrollo de APIs RESTful usando **Node.j
 ## 🚀 Instalación y Uso
 
 1. **Clonar el repositorio**
+
    ```bash
    git clone https://github.com/ngcarcagno/Coderhouse_Backend_I.git
    cd Coderhouse_Backend_I
    ```
 
 2. **Instalar dependencias**
+
    ```bash
    cd api-server-express
    npm install
    ```
 
 3. **Ejecutar el servidor**
+
    ```bash
    npm start
    ```
@@ -72,6 +75,7 @@ El curso de Backend I se enfoca en el desarrollo de APIs RESTful usando **Node.j
 ## 📡 Endpoints Principales
 
 ### Productos (`/api/products`)
+
 - `GET /` - Obtener todos los productos
 - `GET /:id` - Obtener producto por ID
 - `POST /` - Crear nuevo producto
@@ -79,6 +83,7 @@ El curso de Backend I se enfoca en el desarrollo de APIs RESTful usando **Node.j
 - `DELETE /:id` - Eliminar producto
 
 ### Carritos (`/api/carts`)
+
 - `POST /` - Crear nuevo carrito
 - `GET /:id` - Obtener carrito por ID
 - `POST /:cid/product/:pid` - Agregar producto al carrito

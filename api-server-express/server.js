@@ -22,11 +22,11 @@ const productsService = new ProductsService(productsDao);
 //! ---------- HANDLEBARS --------------
 //!-------------------------------------
 app.engine(
-    "hbs",
-    handlebars.engine({
-        extname: ".hbs",
-        defaultLayout: "main",
-    })
+  "hbs",
+  handlebars.engine({
+    extname: ".hbs",
+    defaultLayout: "main",
+  })
 );
 app.set("view engine", "hbs");
 app.set("views", paths.views);
@@ -37,16 +37,16 @@ app.set("views", paths.views);
 
 // const upload = multer({ dest: "uploads/" }); // config simple por defecto
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-    // * ACA usamos este filename para renombrar el path 82376786981243 -> img-44-simple.jpg
-    filename: (req, file, cb) => {
-        const originalName = `img-${req.params.id}-${file.originalname}`;
-        //* Lo guardamos en el objeto req.query para usarlo en el controlador
-        req.query.filename = originalName;
-        cb(null, originalName);
-    },
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  // * ACA usamos este filename para renombrar el path 82376786981243 -> img-44-simple.jpg
+  filename: (req, file, cb) => {
+    const originalName = `img-${req.params.id}-${file.originalname}`;
+    //* Lo guardamos en el objeto req.query para usarlo en el controlador
+    req.query.filename = originalName;
+    cb(null, originalName);
+  },
 });
 
 const upload = multer({ storage: storage });
@@ -74,7 +74,7 @@ app.use("/static", express.static(paths.public));
 app.use("/uploads", express.static(paths.upload));
 
 // Hacer io disponible globalmente para los controladores
-app.set('io', io);
+app.set("io", io);
 
 // Routes
 const routes = require("./src/routes/index");
@@ -96,7 +96,7 @@ app.get("/realtimeproducts", async (req, res) => {
     const products = await productsService.getAllProducts();
     res.render("pages/realtimeproducts", {
       title: "Products Real Time",
-      products: products
+      products: products,
     });
   } catch (error) {
     console.error("Error en ruta realtimeproducts:", error);
@@ -120,45 +120,45 @@ app.use((err, req, res, next) => {
 });
 
 // Configuración de Socket.io
-io.on('connection', (socket) => {
-  console.log('🔌 Usuario conectado:', socket.id);
+io.on("connection", (socket) => {
+  console.log("🔌 Usuario conectado:", socket.id);
 
   // Enviar lista de productos al conectarse
-  socket.on('requestProducts', async () => {
+  socket.on("requestProducts", async () => {
     try {
       const products = await productsService.getAllProducts();
-      socket.emit('updateProducts', products);
+      socket.emit("updateProducts", products);
     } catch (error) {
-      socket.emit('error', 'Error al obtener productos');
+      socket.emit("error", "Error al obtener productos");
     }
   });
 
   // Agregar producto
-  socket.on('addProduct', async (productData) => {
+  socket.on("addProduct", async (productData) => {
     try {
       const newProduct = await productsService.createProduct(productData);
       const allProducts = await productsService.getAllProducts();
-      io.emit('updateProducts', allProducts);
-      socket.emit('productAdded', { success: true, product: newProduct });
+      io.emit("updateProducts", allProducts);
+      socket.emit("productAdded", { success: true, product: newProduct });
     } catch (error) {
-      socket.emit('productAdded', { success: false, error: error.message });
+      socket.emit("productAdded", { success: false, error: error.message });
     }
   });
 
   // Eliminar producto
-  socket.on('deleteProduct', async (productId) => {
+  socket.on("deleteProduct", async (productId) => {
     try {
       await productsService.deleteProduct(productId);
       const allProducts = await productsService.getAllProducts();
-      io.emit('updateProducts', allProducts);
-      socket.emit('productDeleted', { success: true, id: productId });
+      io.emit("updateProducts", allProducts);
+      socket.emit("productDeleted", { success: true, id: productId });
     } catch (error) {
-      socket.emit('productDeleted', { success: false, error: error.message });
+      socket.emit("productDeleted", { success: false, error: error.message });
     }
   });
 
-  socket.on('disconnect', () => {
-    console.log('❌ Usuario desconectado:', socket.id);
+  socket.on("disconnect", () => {
+    console.log("❌ Usuario desconectado:", socket.id);
   });
 });
 
