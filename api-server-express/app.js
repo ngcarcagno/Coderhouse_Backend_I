@@ -13,7 +13,7 @@ const multer = require("multer");
 const mongoose = require("mongoose");
 
 // Importar e instanciar servicios para websockets
-const ProductsDao = require("./src/dao/products.dao");
+const ProductsDao = require("./src/dao/products.dao.local");
 const ProductsService = require("./src/services/products.service");
 
 const productsDao = new ProductsDao(config.getFilePath("products.json"));

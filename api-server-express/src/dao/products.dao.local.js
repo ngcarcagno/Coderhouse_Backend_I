@@ -1,7 +1,7 @@
 const fs = require("fs").promises;
 const crypto = require("crypto");
 
-class ProductsDao {
+class ProductsDaoLocal {
   constructor(filePath) {
     this.filePath = filePath;
   }
@@ -75,4 +75,4 @@ class ProductsDao {
   }
 }
 
-module.exports = ProductsDao;
+module.exports = ProductsDaoLocal;

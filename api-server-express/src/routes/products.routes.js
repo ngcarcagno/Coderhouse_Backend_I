@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const config = require("../../config/config");
 
-const ProductsDao = require("../dao/products.dao");
+const ProductsDao = require("../dao/products.dao.local");
 const ProductsService = require("../services/products.service");
 const ProductsController = require("../controllers/products.controller");
 
