@@ -32,6 +32,49 @@ class ProductsDaoLocal {
     return JSON.parse(JSON.stringify(products));
   }
 
+  // Nueva firma compatible con la implementacion en Mongo
+  async getAllWithOptions(options = {}) {
+    const { limit = 10, page = 1, sort, query } = options;
+    const all = await this.#readFile();
+
+    // Filtrado
+    let filtered = all;
+    if (query !== undefined && query !== null && String(query).trim() !== "") {
+      const q = String(query).toLowerCase();
+      if (q === "true" || q === "available") {
+        filtered = filtered.filter((p) => Number(p.stock) > 0);
+      } else if (q === "false" || q === "unavailable") {
+        filtered = filtered.filter((p) => Number(p.stock) <= 0);
+      } else {
+        filtered = filtered.filter((p) => String(p.category).toLowerCase() === q);
+      }
+    }
+
+    // Ordenamiento por precio
+    if (sort === "asc") filtered.sort((a, b) => a.price - b.price);
+    else if (sort === "desc") filtered.sort((a, b) => b.price - a.price);
+
+    const lim = Number(limit) > 0 ? Number(limit) : 10;
+    const pg = Number(page) > 0 ? Number(page) : 1;
+    const totalDocs = filtered.length;
+    const totalPages = Math.max(Math.ceil(totalDocs / lim), 1);
+
+    const start = (pg - 1) * lim;
+    const docs = filtered.slice(start, start + lim);
+
+    return {
+      docs,
+      totalDocs,
+      limit: lim,
+      page: pg,
+      totalPages,
+      hasPrevPage: pg > 1,
+      hasNextPage: pg < totalPages,
+      prevPage: pg > 1 ? pg - 1 : null,
+      nextPage: pg < totalPages ? pg + 1 : null,
+    };
+  }
+
   async getById(id) {
     const products = await this.#readFile();
     return products.find((b) => b.id === id);

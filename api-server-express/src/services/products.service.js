@@ -4,6 +4,14 @@ class ProductsService {
   }
 
   async getAllProducts() {
+    // Mantener compatibilidad: si el DAO implementa getAllWithOptions la usamos
+    if (typeof this.productsDao.getAllWithOptions === "function") {
+      // Llamada por defecto sin opciones devuelve todos los productos (limit=10 page=1)
+      const result = await this.productsDao.getAllWithOptions();
+      // Si el DAO devolvió el objeto paginado, retornarlo tal cual; si no, intentar adaptar
+      if (result && result.docs !== undefined) return result;
+      return { docs: result };
+    }
     return await this.productsDao.getAll();
   }
 
@@ -13,7 +21,8 @@ class ProductsService {
   }
 
   async createProduct(productData) {
-    const requiredFields = ["title", "description", "code", "price", "status", "stock", "category", "thumbnails"];
+    // Align service-level validation with model fields. 'description' and 'thumbnails' are optional.
+    const requiredFields = ["brand", "model", "code", "price", "stock", "category"];
     const missingFields = requiredFields.filter((field) => !productData[field]);
 
     if (missingFields.length > 0) {

@@ -7,7 +7,7 @@
     "status": true,
     "stock": 15,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/michelin-energy-xm2-195-65-r15.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "4a0c306a-440f-4726-8b9e-49343bb6dceb"
   },
   {
@@ -18,7 +18,9 @@
     "status": true,
     "stock": 10,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/bridgestone-potenza-re050a-205-55-r16.jpg"],
+    "thumbnails": [
+      "https://www.barum-tyres.com/adobe/dynamicmedia/deliver/dm-aid--b2dac310-83aa-48ac-93fe-44c9a1f0e90a/barum-summer-tyres.jpg?quality=85&preferwebp=true"
+    ],
     "id": "5102b913-7bbc-4314-b63b-09293331c462"
   },
   {
@@ -29,7 +31,9 @@
     "status": true,
     "stock": 40,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/firestone-f600-175-70-r13.jpg"],
+    "thumbnails": [
+      "https://img.motor.mapfre.es/wp-content/uploads/2018/05/que_son_los_neumaticos_run_flat-955x608.jpg"
+    ],
     "id": "b3b99081-36c2-48df-8284-1aa0c7af8bb3"
   },
   {
@@ -40,7 +44,7 @@
     "status": true,
     "stock": 20,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/goodyear-eagle-sport-195-55-r15.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "9434afe3-5521-4d7d-a845-b779a76d6360"
   },
   {
@@ -51,7 +55,7 @@
     "status": true,
     "stock": 12,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/dunlop-direzza-dz102-205-45-r17.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "614175d5-1020-45ea-aa8d-f638fad5ea02"
   },
   {
@@ -62,7 +66,7 @@
     "status": true,
     "stock": 18,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/yokohama-bluearth-ae50-215-60-r16.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "fd08e3a2-5fa8-498e-a766-f702c7ebf7cb"
   },
   {
@@ -73,7 +77,7 @@
     "status": true,
     "stock": 35,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/kumho-solus-kh25-185-60-r14.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "d26f66fc-1cb7-4cca-9904-edd8e208f884"
   },
   {
@@ -84,7 +88,9 @@
     "status": true,
     "stock": 22,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/continental-contipowercontact-205-55-r16.jpg"],
+    "thumbnails": [
+      "https://www.barum-tyres.com/adobe/dynamicmedia/deliver/dm-aid--b2dac310-83aa-48ac-93fe-44c9a1f0e90a/barum-summer-tyres.jpg?quality=85&preferwebp=true"
+    ],
     "id": "638139c8-c4f0-433e-8819-1b4769ba42f6"
   },
   {
@@ -95,7 +101,7 @@
     "status": true,
     "stock": 50,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/fate-ar300-175-70-r14.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "538a9dec-fbad-4a2e-92f9-ac5c4c676182"
   },
   {
@@ -106,7 +112,229 @@
     "status": true,
     "stock": 25,
     "category": "Neumáticos",
-    "thumbnails": ["https://example.com/images/pirelli-cinturato-p1-185-65-r15.jpg"],
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
     "id": "f3b94f88-6d05-4198-abfe-b821f0be4681"
+  },
+  {
+    "title": "Hankook Ventus Prime3 205/55 R16",
+    "description": "Neumático de turismo con equilibrio entre confort y agarre en mojado.",
+    "code": "NEU-011",
+    "price": 140000,
+    "status": true,
+    "stock": 28,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000011"
+  },
+  {
+    "title": "General Altimax 4S 205/60 R16",
+    "description": "Diseñado para todas las estaciones, buen desempeño en lluvia y nieve ligera.",
+    "code": "NEU-012",
+    "price": 125000,
+    "status": true,
+    "stock": 30,
+    "category": "Neumáticos",
+    "thumbnails": [
+      "https://i0.wp.com/neumaticosdebona.com.ar/wp-content/uploads/all-terrain-ko2.png?fit=1500%2C1500&ssl=1"
+    ],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000012"
+  },
+  {
+    "title": "Nokian WR G4 195/65 R15",
+    "description": "Neumático orientado a clima frío y superficies húmedas, muy seguro en nieve.",
+    "code": "NEU-013",
+    "price": 132000,
+    "status": true,
+    "stock": 14,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000013"
+  },
+  {
+    "title": "Falken Ziex ZE310 225/45 R17",
+    "description": "Neumático de rendimiento para maniobrabilidad en carretera y respuesta precisa.",
+    "code": "NEU-014",
+    "price": 172000,
+    "status": true,
+    "stock": 9,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000014"
+  },
+  {
+    "title": "P Zero Nero 215/55 R17",
+    "description": "Neumático Pirelli de alta gama, optimizado para deportivos compactos.",
+    "code": "NEU-015",
+    "price": 190000,
+    "status": true,
+    "stock": 7,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000015"
+  },
+  {
+    "title": "Michelin Pilot Sport 4 245/40 R18",
+    "description": "Neumático de ultra rendimiento con excelente agarre en seco y húmedo.",
+    "code": "NEU-016",
+    "price": 280000,
+    "status": true,
+    "stock": 5,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000016"
+  },
+  {
+    "title": "Kenda Klever R/T 235/70 R16",
+    "description": "Neumático all-terrain para SUV y camionetas ligeras, buena durabilidad.",
+    "code": "NEU-017",
+    "price": 150000,
+    "status": true,
+    "stock": 20,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000017"
+  },
+  {
+    "title": "Maxxis Premitra 215/50 R17",
+    "description": "Neumático equilibrado para uso diario, buena longevidad y confort.",
+    "code": "NEU-018",
+    "price": 98000,
+    "status": true,
+    "stock": 26,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000018"
+  },
+  {
+    "title": "Toyo Proxes CF2 205/45 R17",
+    "description": "Neumático deportivo con buen equilibrio entre agarre y duración.",
+    "code": "NEU-019",
+    "price": 155000,
+    "status": true,
+    "stock": 11,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000019"
+  },
+  {
+    "title": "Habilead Touring 195/65 R15",
+    "description": "Neumático económico con buen desempeño en ciudad y ruta.",
+    "code": "NEU-020",
+    "price": 68000,
+    "status": true,
+    "stock": 60,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000020"
+  },
+  {
+    "title": "Accelera Phi R 195/50 R15",
+    "description": "Neumático de alto kilometraje pensado para autos compactos.",
+    "code": "NEU-021",
+    "price": 72000,
+    "status": true,
+    "stock": 33,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000021"
+  },
+  {
+    "title": "Royal Black Performance 225/40 R18",
+    "description": "Diseñado para una conducción deportiva con buena respuesta en curvas.",
+    "code": "NEU-022",
+    "price": 165000,
+    "status": true,
+    "stock": 8,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000022"
+  },
+  {
+    "title": "Federal Formoza FD2 205/55 R16",
+    "description": "Neumático de calidad media con buena relación precio rendimiento.",
+    "code": "NEU-023",
+    "price": 89000,
+    "status": true,
+    "stock": 24,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000023"
+  },
+  {
+    "title": "Barum Bravuris 5HM 225/50 R17",
+    "description": "Neumático de turismo con enfoque en estabilidad a alta velocidad.",
+    "code": "NEU-024",
+    "price": 118000,
+    "status": true,
+    "stock": 16,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000024"
+  },
+  {
+    "title": "Mazzini Eco 195/55 R16",
+    "description": "Neumático económico con baja resistencia al rodamiento para ahorro de combustible.",
+    "code": "NEU-025",
+    "price": 65000,
+    "status": true,
+    "stock": 45,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000025"
+  },
+  {
+    "title": "Yatone City 175/65 R14",
+    "description": "Perfecto para autos compactos, ofrece confort y buen kilometraje.",
+    "code": "NEU-026",
+    "price": 48000,
+    "status": true,
+    "stock": 70,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000026"
+  },
+  {
+    "title": "Keter Master 215/60 R16",
+    "description": "Neumático para turismo con buena adherencia y duración balanceada.",
+    "code": "NEU-027",
+    "price": 102000,
+    "status": true,
+    "stock": 19,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000027"
+  },
+  {
+    "title": "Centara Comfort 185/65 R15",
+    "description": "Neumático orientado a confort acústico y conducción suave en ciudad.",
+    "code": "NEU-028",
+    "price": 79000,
+    "status": true,
+    "stock": 34,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000028"
+  },
+  {
+    "title": "Compass Runner 225/55 R17",
+    "description": "Buena opción para sedanes y crossovers, equilibrio entre agarre y consumo.",
+    "code": "NEU-029",
+    "price": 134000,
+    "status": true,
+    "stock": 13,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000029"
+  },
+  {
+    "title": "Journey Terrain 265/65 R17",
+    "description": "Neumático para todo terreno ligero, ideal para aventuras y rutas mixtas.",
+    "code": "NEU-030",
+    "price": 210000,
+    "status": true,
+    "stock": 6,
+    "category": "Neumáticos",
+    "thumbnails": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHD14b-4jc2n7NeWejZ_smA8OQ4xPR6P80w&s"],
+    "id": "a1b2c3d4-1111-4a2b-9cde-000000000030"
   }
 ]

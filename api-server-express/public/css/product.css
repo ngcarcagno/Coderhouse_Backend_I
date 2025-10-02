@@ -1,0 +1,65 @@
+/* Styles migrated from product.hbs */
+.product-page {
+  max-width: 820px;
+  margin: 20px auto;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 8px;
+}
+.product-page img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  max-height: 420px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+#qtyInput {
+  width: 64px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #e6e9ef;
+  text-align: center;
+}
+#addBtn {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.messages {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 1000;
+}
+.message {
+  background: white;
+  border: 2px solid;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease;
+}
+.message.success {
+  border-color: #28a745;
+  color: #28a745;
+}
+.message.error {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

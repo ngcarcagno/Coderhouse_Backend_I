@@ -1,0 +1,27 @@
+{{> header title="Carrito" }}
+
+<div style="max-width:820px;margin:20px auto;padding:12px;background:#fff;border:1px solid #eef2f7;border-radius:8px">
+  <h2>Carrito</h2>
+  {{#if cart && cart.products && cart.products.length}}
+    <div>
+      {{#each cart.products}}
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f1f3f6">
+          <div>
+            <strong>{{this.product.brand}} {{this.product.model}}</strong>
+            <div style="color:var(--muted);font-size:13px">{{this.product.size}}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div>Qty: {{this.quantity}}</div>
+            <div style="color:#4a90e2;font-weight:600">$ {{this.product.price}}</div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <div style="margin-top:12px;display:flex;justify-content:space-between">
+      <a href="/products">Seguir comprando</a>
+      <button id="checkoutBtn" style="background:#4a90e2;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Ir a pagar</button>
+    </div>
+  {{else}}
+    <div>Carrito vacío</div>
+  {{/if}}
+</div>

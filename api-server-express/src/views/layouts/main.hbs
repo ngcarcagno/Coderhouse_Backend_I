@@ -1,51 +1,42 @@
-<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #4a90e2;
-            color: white;
-            padding: 20px;
-        }
-        h1 {
-            margin: 0;
-        }
-        .container {
-            margin-top: 60px;
-            padding: 20px;
-        }
-        button {
-            padding: 12px 24px;
-            margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #4a90e2;
-            color: white;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background-color: #357abd;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="/static/css/site.css" />
+    <script defer src="/static/js/site.js"></script>
+  </head>
+  <body>
     {{{body}}}
-</body>
+    <!-- Global product modal/overlay used by product and products scripts -->
+    <div id="productOverlay"></div>
+    <div id="productModal">
+      <div style="display:flex;justify-content:flex-end"><button
+          id="modalCloseIcon"
+          aria-label="Cerrar"
+        >✖</button></div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Producto" />
+        <div style="flex:1;text-align:left;padding-left:12px">
+          <h3 id="modalTitle"></h3>
+          <div id="modalPrice"></div>
+          <div id="modalMeta" style="color:var(--muted);font-size:13px;margin:6px 0"></div>
+          <p id="modalDesc" style="margin-top:8px"></p>
+          <div style="margin-top:10px">
+            <input
+              id="modalQty"
+              type="number"
+              min="1"
+              value="1"
+              style="width:64px;padding:6px;border-radius:6px;border:1px solid #e6e9ef;text-align:center"
+            />
+            <button
+              id="modalAddToCart"
+              style="margin-left:8px;padding:8px 12px;border-radius:6px;background:var(--primary);color:#fff;border:none"
+            >Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

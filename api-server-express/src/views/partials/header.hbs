@@ -1,0 +1,28 @@
+<header class="site-header">
+  <a href="/" class="site-logo">← Inicio</a>
+  {{#if title}}
+    <div class="section-title">{{title}}</div>
+  {{/if}}
+  <div class="header-right">
+    {{#if showCart}}
+      <div id="cartIcon" class="cart-icon">
+        <span class="cart-emoji">🛒</span>
+        <span id="cartCount">0</span>
+      </div>
+    {{/if}}
+  </div>
+</header>
+
+{{#if showCart}}
+  <!-- Hidden cart modal used by site scripts (rendered on catalog pages) -->
+  <div id="cartModal" class="cart-modal" style="display:none;">
+    <div class="cart-modal-header">
+      <strong>Carrito</strong>
+      <button id="closeCart" class="btn-icon" aria-label="Cerrar">✖</button>
+    </div>
+    <div id="cartContent" class="cart-modal-body">No hay productos en el carrito</div>
+    <div class="cart-modal-footer">
+      <button id="clearCartBtn" class="btn btn-sm btn-primary" disabled>Vaciar</button>
+    </div>
+  </div>
+{{/if}}

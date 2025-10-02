@@ -6,6 +6,7 @@ const neumaticSchema = new mongoose.Schema({
   code: { type: String, required: true, index: true },
   size: { type: String, required: true, index: true },
   category: { type: String, required: true, index: true },
+  description: { type: String },
   price: { type: Number, required: true, index: false },
   stock: { type: Number, required: true, index: false },
   thumbnails: [{ type: String }],

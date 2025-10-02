@@ -1,0 +1,60 @@
+{{> header title=(concat product.brand " " product.model) }}
+
+<div class="product-page" style="max-width:820px;margin:20px auto;padding:12px;background:#fff;border:1px solid #eef2f7;border-radius:8px">
+  <div style="display:flex;gap:18px;align-items:flex-start">
+    <div style="width:220px">
+      <img src="{{#if product.thumbnails.[0]}}{{product.thumbnails.[0]}}{{else}}/static/img/placeholder.png{{/if}}" alt="{{product.brand}} {{product.model}}" style="width:100%;border-radius:6px;object-fit:contain" />
+    </div>
+    <div style="flex:1">
+      <h2 style="margin:0 0 8px">{{product.brand}} {{product.model}}</h2>
+      <div style="color:#4a90e2;font-weight:600;margin-bottom:8px">$ {{product.price}}</div>
+      <div style="color:var(--muted);margin-bottom:8px">Tamaño: {{product.size}} — Categoría: {{product.category}}</div>
+      <div style="margin-bottom:12px">Stock: {{#if product.stock}}{{product.stock}}{{else}}0{{/if}}</div>
+      <p style="color:#333;margin-bottom:12px">{{product.description}}</p>
+
+      <div style="display:flex;align-items:center;gap:8px">
+        <input id="qtyInput" type="number" min="1" value="1" style="width:64px;padding:6px;border-radius:6px;border:1px solid #e6e9ef;text-align:center" />
+        <button id="addBtn" data-id="{{product._id}}" style="background:#4a90e2;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Agregar</button>
+        <a id="viewCartBtn" href="#" style="margin-left:8px;color:#333;text-decoration:none;display:inline-block">Ver carrito</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="messages" class="messages"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Messages helper (same behavior as realtimeproducts)
+    const messagesContainer = document.getElementById('messages') || (() => { const d = document.createElement('div'); d.id='messages'; d.className='messages'; document.body.appendChild(d); return d; })();
+    function showMessage(text, type) { const messageEl = document.createElement('div'); messageEl.className = `message ${type}`; messageEl.textContent = text; messagesContainer.appendChild(messageEl); setTimeout(()=>messageEl.remove(),4000); }
+    const addBtn = document.getElementById('addBtn');
+    const qtyInput = document.getElementById('qtyInput');
+    const viewCartBtn = document.getElementById('viewCartBtn');
+
+    // Set view cart link if cartId exists
+    const cid = localStorage.getItem('cartId');
+    if (cid) viewCartBtn.href = `/carts/${cid}`;
+    else viewCartBtn.href = '#';
+
+    addBtn.addEventListener('click', async () => {
+      const pid = addBtn.dataset.id;
+      const qty = Number(qtyInput.value || 1);
+      let cartId = localStorage.getItem('cartId');
+      if (!cartId) {
+        const res = await fetch('/api/carts', { method: 'POST' });
+        const data = await res.json();
+        cartId = (data && (data._id || data.id)) || (data && data.cart && (data.cart._id || data.cart.id));
+        if (cartId) localStorage.setItem('cartId', cartId);
+      }
+      if (!cartId) return showMessage('No se pudo crear carrito', 'error');
+      await fetch(`/api/carts/${cartId}/product/${pid}`, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ quantity: qty }) });
+      // update header link
+      document.querySelectorAll('#cartCount').forEach(el => el.textContent = Number(el.textContent || 0) + qty);
+      viewCartBtn.href = `/carts/${cartId}`;
+      showMessage('Producto agregado', 'success');
+    });
+  });
+</script>
+
+<link rel="stylesheet" href="/static/css/product.css">
+<script defer src="/static/js/product-page.js"></script>

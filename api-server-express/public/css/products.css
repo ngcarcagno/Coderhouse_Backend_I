@@ -1,0 +1,275 @@
+.products-layout.three-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-left,
+.catalog,
+.products-right {
+  width: 100%;
+}
+
+/* placeholder third column is intentionally empty */
+
+/* Styles migrated from products.hbs */
+.catalog-container {
+  max-width: 820px;
+  margin: 14px auto;
+  padding: 0 8px;
+}
+.catalog {
+  flex: 1;
+}
+.products-layout {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.filters-column {
+  width: 220px;
+  flex-shrink: 0;
+}
+.filters-column h4,
+.products-left .filters h4 {
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.filters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 6px;
+}
+.filters-list label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.products-left {
+  flex: 0 0 240px;
+  position: relative;
+}
+.products-left .filters {
+  position: sticky;
+  top: 1rem;
+}
+.catalog-container {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 0 16px;
+}
+.catalog {
+  flex: 1;
+  max-width: 640px;
+}
+.catalog-controls {
+  margin-bottom: 12px;
+}
+.filters-availability {
+  margin-top: 12px;
+  font-size: 14px;
+}
+.catalog-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 0;
+}
+.catalog-header h1 {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+}
+.catalog-meta {
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--muted);
+  font-family: Inter, system-ui, Arial;
+  font-size: 13px;
+}
+.catalog-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.catalog-controls-row .catalog-meta {
+  text-align: left;
+  margin: 0;
+}
+.catalog-controls-row .catalog-controls {
+  justify-self: end;
+}
+.list-container {
+  background: #fff;
+  border: 1px solid #e9e9f0;
+  padding: 8px;
+  border-radius: 8px;
+}
+.products-grid.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product-card.list-entry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #f6f8fc;
+  background: var(--card-bg);
+}
+.product-card .thumb img {
+  display: block;
+  width: 84px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #f6f8fb;
+}
+.product-card .thumb img[src=""] {
+  visibility: hidden;
+}
+.product-card .info {
+  flex: 1;
+  font-family: Inter, system-ui, Arial;
+}
+.product-card .info h3 {
+  margin: 0;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  color: #222;
+  text-align: left;
+}
+.product-card .meta-line {
+  display: flex;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 6px 0;
+}
+.product-card .desc {
+  color: #6b6f76;
+  margin: 4px 0 0 0;
+  line-height: 1.2;
+  font-size: 13px;
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-card .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+button.add-to-cart {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+button.add-to-cart:hover {
+  opacity: 0.96;
+}
+#cartModal {
+  font-family: Inter, system-ui, Arial;
+}
+.cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f3f6;
+}
+.cart-info {
+  flex: 1;
+  color: #2b2b2b;
+  text-align: center;
+  font-size: 14px;
+}
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+.cart-qty {
+  width: 54px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #e6e9ef;
+  text-align: center;
+  font-size: 13px;
+}
+.remove-item {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.remove-item svg {
+  display: block;
+}
+#modalCloseIcon {
+  transition: background 0.12s ease, transform 0.08s ease;
+}
+#modalCloseIcon:hover {
+  background: #c84b4b;
+  transform: translateY(-1px);
+}
+.messages {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 1000;
+}
+.message {
+  background: white;
+  border: 2px solid;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease;
+}
+.message.success {
+  border-color: #28a745;
+  color: #28a745;
+}
+.message.error {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
